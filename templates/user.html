@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gujibook</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/user.css') }}">
+</head>
+<body>
+    <section id="nav-bar">
+        <div class="nav-bar">
+            <div class="logo">Gujibook</div>
+            <div class="buttons">
+                <div class="user">@{{ user.split('@')[0] }}</div>
+                <a href="/log-out"><button class="log-out btn">Log Out</button></a>
+            </div>
+        </div>
+    </section>
+    <section id="create-post">
+        <div class="post-body">
+            <form action="/create-post/{{user}}" method="post">
+                <textarea name="post" placeholder="New Post..."></textarea>
+                <button type="submit" class="post-btn">Post</button>
+            </form>
+        </div>
+    </section>
+    <section id="content">
+        <div class="content-container">
+            {% if posts %}
+            {% for post in posts %}
+            <div class="content-box">
+                <div class="top">
+                    <div class="name">{{ post["user"] }}</div>
+                    <div class="date">{{ post["time"] }}</div>
+                </div>
+                <div class="content-body">
+                    {{ post["body"] }}
+                </div>
+                <div class="buttons">
+                    <a href=""><button class="edit">Edit</button></a>
+                    <a href=""><button class="delete">Delete</button></a>
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gujibook</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
+</head>
+<body>
+    <section id="login">
+        <div class="logo-title">GUJIBOOK</div>
+        <div class="log-in">Register</div>
+        <div class="login-form">
+            <form method="post" action="{{ url_for('new_user') }}">
+                <input name="email" placeholder="Email">
+                <input name="password" placeholder="Password" type="password">
+                <input name="password2" placeholder="Repeat Password" type="password">
+                {% if error %}
+                    <p style="margin:0; font-weight: bold;">{{ error }}</p>
+                {% endif %}
+                <input class="btn" type="submit" value="Register">
+                <div>Already have an account? <span><a href="{{ url_for('home') }}">Log In Here</a></span></div>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

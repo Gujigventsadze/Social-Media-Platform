@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#nav-bar {
+    width: 100%;
+    height: 10vh;
+    background-color: hsl(227, 65%, 59%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-bar {
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: "Outfit";
+    color: white;
+    font-weight: bold;
+}
+
+.logo {
+    font-size: 2rem;
+}
+.buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.btn {
+    border: 2px solid white;
+    padding: 5px 1rem;
+    border-radius: 2px;
+    font-family: "Outfit";
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    color: hsl(227, 65%, 59%);
+    transition: background-color 0.15s ease-in-out;
+}
+.new-post:hover {
+    background-color: transparent;
+    color: white;
+}
+.log-out {
+    background-color: transparent;
+    color: white;
+}
+.log-out:hover {
+    background-color: white;
+    color: hsl(227, 65%, 59%);
+}
+
+#create-post {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+.post-body {
+    width: 60%;
+    height: 30vh;
+    position: relative;
+}
+.post-body textarea {
+    width: 100%;
+    height: 100%;
+    resize: none;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 5px gray;
+    box-sizing: border-box;
+    padding: 2rem 2rem 4rem 2rem;
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.post-body textarea:placeholder-shown {
+    font-size: 1.5rem;
+}
+form {
+    display: inline;
+}
+.post-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 50px;
+    border: none;
+    padding: 10px 30px;
+    font-family: "Outfit";
+    background-color: hsl(227, 65%, 59%);
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+.post-btn:hover {
+    opacity: 0.7;
+}
+.post-btn:active {
+    opacity: 0.5;
+}
+
+
+#content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.content-container {
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 5px;
+}
+.content-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 0 5px gray;
+    padding: 2rem;
+}
+.top {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Outfit";
+    font-size: 1.5rem;
+}
+
+.content-body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.7px;
+}
+
+.edit, .delete{
+    border: none;
+    padding: 3px 20px;
+    font-family: "Outfit";
+    background-color: hsl(227, 65%, 59%);
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+.edit:hover, .delete:hover {
+    opacity: 0.7;
+}
+.edit:hover, .delete:hover {
+    opacity: 0.5;
+}
